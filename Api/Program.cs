@@ -104,4 +104,10 @@ app.UseAuthorization();  // Then use Authorization
 
 app.MapControllers();
 app.UseCors("MyCorsPolicy");
+app.Map("/test", async context =>
+{
+    await context.Response.WriteAsync("This is a test route!");
+});
 app.Run();
+
+
