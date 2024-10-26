@@ -53,7 +53,9 @@ builder.Services.AddDbContext<PMTContext>(options =>
 // Dependency injection for services
 builder.Services.AddScoped(typeof(GenericService<>));
 builder.Services.AddTransient<CommonModule>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IUserService, UserService>();
+
 
 // JWT Authentication setup
 var key = builder.Configuration["Jwt:Key"]; // Use Configuration to fetch the secret key
